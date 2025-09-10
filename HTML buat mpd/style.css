@@ -38,18 +38,21 @@ header{
     z-index: 100;
 }
 
-.logo{
-    font-size: 4rem;
-    color:#b74b4b;
-    font-weight: 1000;
-    cursor: pointer;
-    transition: 0.5s ease;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-.logo:hover{
-    transform: scale(1.1);
+.logo img {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
+.logo img:hover {
+  content: url("Hugo_icon2.webp");
+}
 nav a{
     font-size: 1.8rem;
     color: white;
@@ -113,7 +116,7 @@ section.show {
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-color: black;
+    background-color: transparent;
 }
 
 .home .home-content h1{
@@ -276,7 +279,7 @@ span{
 
 .about {
   padding: 6rem 9%;
-  background: #111;
+  background: transparent;
   color: white;
 }
 
@@ -325,7 +328,7 @@ span{
 }
 
 .contact .heading {
-  font-size: 2rem;
+  font-size: 4rem;
   margin-bottom: 40px;
 }
 
@@ -368,3 +371,14 @@ span{
 .contact-box:hover p {
   color: #fff;
 }
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  background: black;
+}
+

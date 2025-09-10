@@ -6,13 +6,17 @@
     <title>My Palace</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-</head>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </head>
 <body>
+  <div id="particles-js"></div>
     <header>
-        <a href="#" class="logo">Hi :D</a>
+        <a href="#logo" class="logo">
+          <img src="Hugo_icon.webp" alt="logo">
+        </a>
 
         <nav>
-            <a href="#" class="active"> Home</a>
+            <a href="#home" class="active"> Home</a>
             <a href="#about">About Me</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -62,7 +66,7 @@
     <div class="info-item" onclick="toggleInfo(this)">
       <button class="info-btn">Major</button>
       <div class="info-detail">
-        <p>Ilmu Komputer</p>
+        <p>Computer Science</p>
       </div>
     </div>
 
@@ -75,8 +79,7 @@
   </div>
 </section>
 <section class="contact" id="contact">
-  <h2 class="heading">Contact <span>Me</span></h2>
-  
+  <h1 class="heading">Contact <span>Me</span></h1>
   <div class="contact-container">
     <a href="https://x.com/AhiseKy" target="_blank" class="contact-box">
       <i class="fa-brands fa-x-twitter"></i>
@@ -110,6 +113,102 @@
       detail.style.display = "block";
     }
   }
+  
+  window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+
+  let current = "home";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 100,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#b74b4b"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false
+    },
+    "size": {
+      "value": 3,
+      "random": true
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#b74b4b",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "attract": {
+        "enable": false
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "repulse": {
+        "distance": 100,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
 </script>
 </body>
 </html>
