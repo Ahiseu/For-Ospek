@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Palace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </head>
+<body>
+  <div id="particles-js"></div>
+    <header>
+        <a href="#logo" class="logo">
+          <img src="Hugo_icon.webp" alt="logo">
+        </a>
+        <nav>
+            <a href="#home" class="active"> Home</a>
+            <a href="#about">About Me</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="Chiasuzu.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Aurell</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>Hello, I'm a Computer Science student at IPB University</p>
+            <p>I like to do random things</p>
+            <div class="social-icons">
+                <a href="https://x.com/AhiseKy" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/zivann_kaa/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/zivanka-maheswari-59345a275/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Ahiseu" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+<section class="about" id="about">
+  <div class="about-content">
+    <h2 class="heading">About <span>Me</span></h2>
+
+    <div class="info-item" onclick="toggleInfo(this)">
+      <button class="info-btn">Name</button>
+      <div class="info-detail">
+        <p>Zivanka Aurellia Astadewi Maheswari</p>
+      </div>
+    </div>
+
+    <div class="info-item" onclick="toggleInfo(this)">
+      <button class="info-btn">NIM</button>
+      <div class="info-detail">
+        <p>M0403241111</p>
+      </div>
+    </div>
+
+    <div class="info-item" onclick="toggleInfo(this)">
+      <button class="info-btn">Proxy</button>
+      <div class="info-detail">
+        <p>Abelian</p>
+      </div>
+    </div>
+
+    <div class="info-item" onclick="toggleInfo(this)">
+      <button class="info-btn">Major</button>
+      <div class="info-detail">
+        <p>Computer Science</p>
+      </div>
+    </div>
+
+    <div class="info-item" onclick="toggleInfo(this)">
+      <button class="info-btn">University</button>
+      <div class="info-detail">
+        <p>IPB University</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="contact" id="contact">
+  <h1 class="heading">Contact <span>Me</span></h1>
+  <div class="contact-container">
+    <a href="https://x.com/AhiseKy" target="_blank" class="contact-box">
+      <i class="fa-brands fa-x-twitter"></i>
+      <span>Twitter</span>
+    </a>
+
+    <a href="https://www.instagram.com/zivann_kaa/" target="_blank" class="contact-box">
+      <i class="fa-brands fa-instagram"></i>
+      <span>Instagram</span>
+    </a>
+
+    <a href="https://github.com/Ahiseu" target="_blank" class="contact-box">
+      <i class="fa-brands fa-github"></i>
+      <span>GitHub</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/zivanka-maheswari-59345a275/" target="_blank" class="contact-box">
+      <i class="fa-brands fa-linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+  </div>
+</section>
+
+
+<script>
+  function toggleInfo(element) {
+    const detail = element.querySelector(".info-detail");
+    const isVisible = detail.style.display === "block";
+    document.querySelectorAll(".info-detail").forEach(d => d.style.display = "none");
+    if (!isVisible) {
+      detail.style.display = "block";
+    }
+  }
+  
+  window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+
+  let current = "home";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 100,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#b74b4b"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false
+    },
+    "size": {
+      "value": 3,
+      "random": true
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#b74b4b",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "attract": {
+        "enable": false
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "repulse": {
+        "distance": 100,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
+</script>
+</body>
+</html>
