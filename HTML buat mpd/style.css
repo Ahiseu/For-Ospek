@@ -100,6 +100,19 @@ nav a.active{
     }
 }
 
+@media(max-width: 600px) {
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
 section{
     min-height: 100vh;
     padding: 5rem 9% 5rem;
@@ -238,7 +251,7 @@ span{
         content: "Gamer";
     }
     21%, 40%{
-        content: "Web Designer";
+        content: "Sleeper";
     }
     41%, 60%{
         content: "Cool girl(?)";
@@ -288,6 +301,16 @@ span{
   margin-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+  .about {
+    text-align: center;
+  }
+
+  .about .heading {
+    text-align: center;
+  }
+}
+
 .info-item {
   display: flex;
   align-items: center;
@@ -296,8 +319,9 @@ span{
 }
 
 .info-btn {
-  width: 15%;
-  text-align: left;
+  width: auto;
+  min-width: 120px;
+  text-align: center;
   background: #b74b4b;
   color: white;
   border: none;
@@ -307,6 +331,7 @@ span{
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background 0.3s;
+  white-space: nowrap;
 }
 
 .info-btn:hover {
