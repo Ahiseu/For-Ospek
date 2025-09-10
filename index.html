@@ -120,7 +120,7 @@
   let current = "home";
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
+    const sectionTop = section.offsetTop - 80;
     const sectionHeight = section.clientHeight;
     if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
       current = section.getAttribute("id");
